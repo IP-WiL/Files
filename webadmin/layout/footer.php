@@ -1,0 +1,5 @@
+<?php
+
+//CODE FOR FOOTER
+
+?>
