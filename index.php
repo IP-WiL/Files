@@ -1,6 +1,7 @@
 <?php
 
 include("db\dbConn.php");
+include("class\Product.php");
 
 global $db;
 
@@ -34,6 +35,9 @@ while($row = $rstFeatured->fetch_assoc()){
       <td>".$row2["Product_Price"]."</td>
       <td>".$row3["Product_Price"]."</td>
    </tr>";
+	
+	$product = new Product;
+	$product->InitializeById(1);
 
 }
 
