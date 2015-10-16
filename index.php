@@ -11,8 +11,8 @@ switch($ACTION){
    case "LOGIN":
       $TITLE = "LOGIN";
    break;
-   case "REGISTER":
-      $TITLE = "REGISTER";
+   case "Register":
+      $TITLE = "Register";
       include_once("/register.php");
    break;
    default:
@@ -23,5 +23,11 @@ switch($ACTION){
 
 
 //EVENTS
+switch($ACTION){
+   case "Successful":
+      $TITLE = "Register";
+      include_once("/registerSuccess.php");
+      break;
+}
 
 ?>

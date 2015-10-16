@@ -8,7 +8,7 @@ if($_REQUEST)
 if($ACTION == 'REGISTER'){
    $strSignUpHTML = "";
 }else{
-   $strSignUpHTML =  "<a href='index.php?ACTION=REGISTER' style='float:left;line-height: 80px; width: 14.285%; height: 80px; background-color:#3399CC;font-size:20px;
+   $strSignUpHTML =  "<a href='index.php?ACTION=Register' style='float:left;line-height: 80px; width: 14.285%; height: 80px; background-color:#3399CC;font-size:20px;
                      text-align:center; border:0px;font-family: Arial; '>Sign Up</a>";
 }
 
