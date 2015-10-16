@@ -3,6 +3,7 @@
 $TITLE = "Home";
 
 include_once("layout/header.php");
+include_once("include/product.php");
 
 global $db;
 
@@ -42,6 +43,10 @@ while($row = $rstFeatured->fetch_assoc()){
 $strFeatured .= "</table>";
 
 echo $strFeatured;
+
+
+   $product = new Product;
+   $product->InitializeById(2);
 
 include_once("layout/footer.php");
 
