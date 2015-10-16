@@ -11,7 +11,7 @@ if(!$rstFeatured = $db->query($sqlFeatured)){
 }
 
 
-$strFeatured = "<table>";
+$strFeatured = "<table id='featuredTable'>";
 
 while($row = $rstFeatured->fetch_assoc()){
 
