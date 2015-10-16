@@ -13,6 +13,7 @@ switch($ACTION){
    break;
    case "REGISTER":
       $TITLE = "REGISTER";
+      include_once("/register.php");
    break;
    default:
       $TITLE = "Home";
