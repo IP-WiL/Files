@@ -1,6 +1,8 @@
 <?php
 
-include("db\dbConn.php");
+$TITLE = "Home";
+
+include_once("layout/header.php");
 
 global $db;
 
@@ -40,6 +42,8 @@ while($row = $rstFeatured->fetch_assoc()){
 $strFeatured .= "</table>";
 
 echo $strFeatured;
+
+include_once("layout/footer.php");
 
 
 
