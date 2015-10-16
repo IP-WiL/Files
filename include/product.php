@@ -2,8 +2,6 @@
 
    include_once("db/dbConn.php");
 	
-	global $db;
-	
 	class Product { 
 	
    	public  $id;

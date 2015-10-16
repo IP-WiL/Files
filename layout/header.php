@@ -7,7 +7,7 @@ $strHeader = "<!DOCTYPE html>
 			 <head>
            <title>$TITLE</title>
             <link rel='stylesheet' type='text/css' href='css/css.css'>
-            <link language='javascript' type='text/javascript' src='js/js.js'>
+            <script src='js/js.js'></script>
          </head>
            <header>
            <div id='bannermainhead' style=' width: 100%; height: 280px; background: linear-gradient(#330066, #452899); '> 
@@ -20,8 +20,8 @@ $strHeader = "<!DOCTYPE html>
 			   <a  style='float:left;line-height: 80px; width: 14.285%; height: 80px; background-color:#3399CC;font-size:20px;  text-align:center; border:0px;font-family: Arial; '>Appliances</a>
 			   <a  style='float:left;line-height: 80px; width: 14.285%; height: 80px; background-color:#3399CC;font-size:20px;  text-align:center; border:0px;font-family: Arial; '>Log In</a>
 			   <a  style='float:left;line-height: 80px; width: 14.285%; height: 80px; background-color:#3399CC;font-size:20px;  text-align:center; border:0px;font-family: Arial; '>Sign Up</a>
-			   <button type='button' style='float:left; width: 14.285%; height: 80px;background-color:#3399CC    ;font-size:20px; border:0px;font-family: Arial; '>Search</button>
-			   <input type='text' id='txtSearch' onClick='jsSearchValidate()' style='float:left;line-height: 80px; width: 14.285%; height: 78px; font-size:20px;  text-align:center; border:0px;font-family: Arial;' value='search...' >
+			   <button type='button' onClick='jsSearchValidate()' style='float:left; width: 14.285%; height: 80px;background-color:#3399CC    ;font-size:20px; border:0px;font-family: Arial; '>Search</button>
+			   <input type='text' id='txtSearch' style='float:left;line-height: 80px; width: 14.285%; height: 78px; font-size:20px;  text-align:center; border:0px;font-family: Arial;' value='search...' >
 		   </div>
          </header>
 		 
