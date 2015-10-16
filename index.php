@@ -1,7 +1,5 @@
 <?php
 
-include_once("layout/header.php");
-include_once("include/product.php");
 
 if($_REQUEST)
    $ACTION = $_REQUEST['ACTION'];
@@ -24,10 +22,5 @@ switch($ACTION){
 
 
 //EVENTS
-
-include_once("layout/footer.php");
-
-
-
 
 ?>

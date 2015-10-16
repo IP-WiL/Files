@@ -1,5 +1,8 @@
 <?php
 
+include_once("layout/header.php");
+include_once("include/product.php");
+
 global $db;
 
 $sqlFeatured = "SELECT * FROM product WHERE featured = 1";
@@ -42,5 +45,7 @@ echo $strFeatured;
 
    $product = new Product;
    $product->InitializeById(2);
+
+include_once("layout/footer.php");
 
 ?>
