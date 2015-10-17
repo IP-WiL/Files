@@ -2,6 +2,7 @@
 
 include_once("layout/header.php");
 include_once("include/product.php");
+include_once("include/shoppingcart.php");
 
 global $db;
 
@@ -42,14 +43,24 @@ $strFeatured .= "</table>";
 
 echo $strFeatured;
 
+	$shoppingcart = new ShoppingCart;
 
    $product = new Product;
    $product->InitializeById(2);
-   $product->Show();
+   //$product->Show();
+   
+   $shoppingcart->AddProduct($product);
    
    $product = new Product;
    $product->InitializeById(3);
-   $product->Show();
+   //$product->Show();
+   
+   $shoppingcart->AddProduct($product);
+   
+   $shoppingcart->ShowProducts();
+   
+   
+   
 	
 include_once("layout/footer.php");
 

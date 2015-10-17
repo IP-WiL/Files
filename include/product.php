@@ -63,6 +63,7 @@
 		echo "<th>".$this->name."</th> ";
 		echo "<th>".$this->supId."</th> ";
 		echo "<th>".$this->description."</th> ";
+		echo "<th>".$this->quantity."</th> ";
 		echo "<th>".$this->price."</th> ";
 		echo "<br>";
    	}
