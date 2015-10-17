@@ -1,12 +1,29 @@
 <?php
+session_start();
 
 include_once("layout/header.php");
 
 if($_POST){
-      $email = $_POST['email'];
-      $password = $_POST['password'];
+   $email = $_POST['email'];
+   $password = $_POST['password'];
 
-      header('Location: index.php?Action=LoginSuccessful');
+   $sqlLogin = "SELECT * FROM customer WHERE Email = $email";
+
+   if($rstLogin = $db->query($sqlLogin)){
+      $row = $rstLogin->fetch_assoc();
+
+      //Password in DB compared to Password given
+      if($row['LName'] == $password){
+         $_SESSION['Username'] = $row['FName'];
+         print_r($_SESSION);
+         die;
+         header('Location: index.php?Action=RegSuccessful');
+      }
+   }else{
+      echo "No such email exists";
+   }
+
+   header('Location: index.php?Action=LoginSuccessful');
 }else{
    $email = "";
    $password = "";
