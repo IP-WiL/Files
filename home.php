@@ -45,7 +45,12 @@ echo $strFeatured;
 
    $product = new Product;
    $product->InitializeById(2);
-
+   $product->Show();
+   
+   $product = new Product;
+   $product->InitializeById(3);
+   $product->Show();
+	
 include_once("layout/footer.php");
 
 ?>
