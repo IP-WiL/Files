@@ -14,6 +14,10 @@
    	public  $active; 
    	public  $catId;
    	public  $featured;	
+	
+	//For Cart
+	public  $purchasedAmount = 0;
+
        
     public function Product()
     {		
@@ -42,6 +46,11 @@
 		$this->active = $row["active"];
 		$this->featured = $row["featured"];
       }
+	  
+	  public function SetPurchasedAmount($amt)
+	  {
+		  $this->purchasedAmount = $amt;
+	  }
    	
       public function Save($tid, $tname, $tprice, $tquantity, $tdescription,  $timgUrl, $tsupId, $tactive, $tcatId, $tfeatured)
       {
@@ -56,8 +65,13 @@
    		$this->catId = $tcatId; 
    		$this->featured = $tfeatured; 
       }
+	  
+	 public function GetId()
+	 {
+		 return $this->id;
+	 }
    	
-   	public function Show()
+   	public function ShowInStore()
    	{
    		echo "<th>".$this->id."</th> ";
 		echo "<th>".$this->name."</th> ";
@@ -67,6 +81,23 @@
 		echo "<th>".$this->price."</th> ";
 		echo "<br>";
    	}
+	
+	public function ShowInCart()
+   	{
+   		echo "<th>".$this->id."</th>  ";
+		echo "<th>".$this->name."</th>  ";
+		echo "<th>".$this->purchasedAmount."</th>  ";
+		echo "<th>R".$this->price*$this->purchasedAmount."</th>  ";
+		echo "<br>";
+   	}
+	
+	public function GetTotalCost()
+	{	
+		return $this->price*$this->purchasedAmount;
+	}
+	
+	
+
 } 
 	
 ?>

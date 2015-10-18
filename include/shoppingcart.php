@@ -7,10 +7,17 @@
 	
 		public $products = array();
 		public $tempProduct;
+		public $totalPrice;
 		
 		public function ShoppingCart()
 		{		
 
+		}
+		
+		public function ClearCart()
+		{
+			unset($products);
+			$products = array();
 		}
 		
 		public function AddProduct($product)
@@ -18,22 +25,27 @@
 			array_push($this->products,$product);
 		}
 		
-		public function RemoveProduct($id)
+		public function RemoveProduct($tid)
 		{
-			
+			for($i = 0;$i < count($this->products);$i++)
+			{
+				$this->tempProduct = $this->products[$i];
+				if($this->tempProduct->GetId() == $tid)
+				{
+					unset($this->products[$i]);
+				}
+				$this->totalPrice = 0;
+			}
 		}
 		
 		public function ShowProducts()
 		{
-			//for ($x = 0; $x <= count($this->products); $x++)
-			//{
-			//	echo $this->products[$x]->Show();
-			//}
-			
 			foreach ($this->products as $this->tempProduct) 
 			{
-				$this->tempProduct->Show();
+				$this->tempProduct->ShowInCart();
+				$this->totalPrice += $this->tempProduct->GetTotalCost();
 			}
+			echo "<th>TOTAL: R".$this->totalPrice."</th><br>  ";
 		}
 	} 
 	

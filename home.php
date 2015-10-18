@@ -47,18 +47,19 @@ echo $strFeatured;
 
    $product = new Product;
    $product->InitializeById(2);
-   //$product->Show();
+   $product->SetPurchasedAmount(6);
    
    $shoppingcart->AddProduct($product);
    
    $product = new Product;
    $product->InitializeById(3);
-   //$product->Show();
+   $product->SetPurchasedAmount(2);
    
    $shoppingcart->AddProduct($product);
-   
    $shoppingcart->ShowProducts();
    
+   $shoppingcart->RemoveProduct(2);
+   $shoppingcart->ShowProducts();
    
    
 	
