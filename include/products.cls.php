@@ -24,7 +24,8 @@ class Products {
          $rowProducts2 = $rstProducts->fetch_assoc();
          $rowProducts3 = $rstProducts->fetch_assoc();
 
-         $strProductsHTML .= "<tr>
+         $strProductsHTML .= "
+            <tr>
                <td>". $rowProducts["Product_Name"] . "</td>
                <td>". $rowProducts3["Product_Name"] . "</td>
                <td>". $rowProducts3["Product_Name"] . "</td>
@@ -50,9 +51,9 @@ class Products {
                <td>Quantity: ". $rowProducts3["quantity"]. "</td>
             </tr>
             <tr>
-               <td><a href=''>Add to Cart</a></td>
-               <td><a href=''>Add to Cart</a></td>
-               <td><a href=''>Add to Cart</a></td>
+               <td><a href='".basename($_SERVER['PHP_SELF'])."/ProductID=".$rowProducts["Product_Id"]."'>Add to Cart</a></td>
+               <td><a href='".basename($_SERVER['PHP_SELF'])."/ProductID=".$rowProducts2["Product_Id"]."'>Add to Cart</a></td>
+               <td><a href='".basename($_SERVER['PHP_SELF'])."/ProductID=".$rowProducts3["Product_Id"]."'>Add to Cart</a></td>
             </tr>";
 
             ;
