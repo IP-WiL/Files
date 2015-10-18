@@ -20,6 +20,18 @@
 			$products = array();
 		}
 		
+		public function SerializeData()
+		{
+			$str = serialize($products);
+			return urlencode($str);
+		}
+		
+		public function UnserializeData($str)
+		{
+			$products = unserialize(urldecode($str));
+			var_dump($products);
+		}
+		
 		public function AddProduct($product)
 		{
 			array_push($this->products,$product);

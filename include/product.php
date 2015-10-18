@@ -68,7 +68,7 @@
 	  {
 		   //SQL Statement
    		$sqlProduct = "UPDATE product Description=".$tdescription.",Product_Name=".$tname.",Sup_Id=".$tsupId.",Product_Price=".$tprice.",refcategoryid=".$tcatId.
-					  ",active=".$tactive.",featured=".$tfeatured." WHERE product_id="..$this->id;
+					  ",active=".$tactive.",featured=".$tfeatured." WHERE product_id=".$this->id;
 
          //Execute Query
    		if(!$rstProduct = $db->query($sqlProduct)){
