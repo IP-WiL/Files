@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/dashboard.css"/>
+</head>
 <?php
 
 	include_once("layout/header.php");
@@ -76,3 +80,4 @@
 
 
 ?>
+</html>

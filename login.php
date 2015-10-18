@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/login.css"/>
+</head>
 <?php
 
 include_once("layout/header.php");
@@ -48,3 +52,4 @@ include_once("layout/footer.php");
 
 
 ?>
+</html>

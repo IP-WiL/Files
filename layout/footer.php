@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/footer.css"/>
+</head>
 <?php
 
 
@@ -16,3 +20,4 @@
 
 
 ?>
+</html>

@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/cellular.css"/>
+</head>
 <?php
 
    session_start();
@@ -8,10 +12,11 @@
 
 	include_once("layout/header.php");
 
-	$strHTML = "<h1>Cellular</h2>";
+	$strHTML = "<h1>Cellular</h1>";
 
    $sportsProducts = new Products();
 
 	echo $strHTML . $sportsProducts->getList(2);
 
 ?>
+</html>

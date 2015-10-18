@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/productsc.css"/>
+</head>
 <?php
 include_once("db/dbConn.php");
 
@@ -71,3 +75,4 @@ class Products {
 
 
 ?>
+</html>

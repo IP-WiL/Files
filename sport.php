@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/sport.css"/>
+</head>
 <?php
       
    session_start();
@@ -15,3 +19,4 @@
 	echo $strHTML . $sportsProducts->getList(1);
 
 ?>
+</html>

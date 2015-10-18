@@ -1,3 +1,7 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/home.css"/>
+</head>
 <?php
 
 include_once("layout/header.php");
@@ -47,22 +51,22 @@ echo $strFeatured;
 
    $product = new Product;
    $product->InitializeById(2);
-   $product->SetPurchasedAmount(6);
+   //$product->Show();
    
    $shoppingcart->AddProduct($product);
    
    $product = new Product;
    $product->InitializeById(3);
-   $product->SetPurchasedAmount(2);
+   //$product->Show();
    
    $shoppingcart->AddProduct($product);
+   
    $shoppingcart->ShowProducts();
    
-   $shoppingcart->RemoveProduct(2);
-   $shoppingcart->ShowProducts();
    
    
 	
 include_once("layout/footer.php");
 
 ?>
+</html>

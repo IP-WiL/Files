@@ -1,5 +1,5 @@
 <?php
-
+include_once("layout/header.php");
 
 if($_REQUEST)
    $ACTION = $_REQUEST['Action'];
@@ -34,5 +34,5 @@ switch($ACTION){
       $TITLE = "Home";
       include_once("/home.php");
 }
-
+include_once("layout/footer.php");
 ?>
