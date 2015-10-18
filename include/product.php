@@ -52,19 +52,30 @@
 		  $this->purchasedAmount = $amt;
 	  }
    	
-      public function Save($tid, $tname, $tprice, $tquantity, $tdescription,  $timgUrl, $tsupId, $tactive, $tcatId, $tfeatured)
+      public function Insert( $tdescription,$tname, $tsupId,$tprice, $tquantity, $timgUrl, $tcatId, $tactive, $tfeatured)
       {
-        $this->id = $tid;
-   		$this->name = $tname; 
-   		$this->price = $tprice; 
-   		$this->quantity = $tquantity; 
-   		$this->description = $tdescription; 
-   		$this->imgUrl = $timgUrl; 
-   		$this->supId = $tsupId; 
-   		$this->active = $tactive; 
-   		$this->catId = $tcatId; 
-   		$this->featured = $tfeatured; 
+		 //SQL Statement
+   		$sqlProduct = "INSERT INTO product(Description,Product_Name,Sup_Id,Product_Price,refcategoryid,active,featured) 
+					   VALUES(".$tdescription.",".$tname.",".$tsupId.",".$tprice.",".$tcatId."".$tactive.",".$tfeatured.")";
+
+         //Execute Query
+   		if(!$rstProduct = $db->query($sqlProduct)){
+   		 die("Error when running product query, " . $db->error);
+   		}
       }
+	  
+	  public function Update($tdescription,$tname, $tsupId,$tprice, $tquantity, $timgUrl, $tcatId, $tactive, $tfeatured)
+	  {
+		   //SQL Statement
+   		$sqlProduct = "UPDATE product Description=".$tdescription.",Product_Name=".$tname.",Sup_Id=".$tsupId.",Product_Price=".$tprice.",refcategoryid=".$tcatId.
+					  ",active=".$tactive.",featured=".$tfeatured." WHERE product_id="..$this->id;
+
+         //Execute Query
+   		if(!$rstProduct = $db->query($sqlProduct)){
+   		 die("Error when running product query, " . $db->error);
+   		}
+		  
+	  }
 	  
 	 public function GetId()
 	 {
