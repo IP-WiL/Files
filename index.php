@@ -13,6 +13,7 @@ switch($ACTION){
       include_once("/login.php");
    break;
    case "LoginSuccessful":
+      session_start();
       $TITLE = "Home";
       include_once('/dashboard.php');
    break;
@@ -25,6 +26,7 @@ switch($ACTION){
       include_once("/registerSuccess.php");
    break;
    case "Logoff":
+      session_unset();
       $TITLE = "Goodbye!";
       include_once("/logoff.php");
    break;

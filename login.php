@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 include_once("layout/header.php");
 
@@ -7,28 +6,24 @@ if($_POST){
    $email = $_POST['email'];
    $password = $_POST['password'];
 
-   $sqlLogin = "SELECT * FROM customer WHERE Email = $email";
+   $sqlLogin = "SELECT * FROM customer WHERE Email = '$email'";
 
    if($rstLogin = $db->query($sqlLogin)){
       $row = $rstLogin->fetch_assoc();
 
       //Password in DB compared to Password given
-      if($row['LName'] == $password){
-         $_SESSION['Username'] = $row['FName'];
-         print_r($_SESSION);
-         die;
-         header('Location: index.php?Action=RegSuccessful');
+      if($row['Password'] == $password){      
+         $id = $row['Customer_Id'];
+         header("Location: index.php?Action=LoginSuccessful&id=$id");
       }
    }else{
       echo "No such email exists";
    }
 
-   header('Location: index.php?Action=LoginSuccessful');
 }else{
    $email = "";
    $password = "";
 }
-
 
 $strHTML = "<h2>Welcome to Vision, please log in below</h2>
 	<form action='' method='post'>
